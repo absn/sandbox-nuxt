@@ -1,65 +1,67 @@
 <template>
   <section class="container">
     <div>
-      <app-logo/>
       <h1 class="title">
-        sandbox-nuxt
+        CivBG Support
       </h1>
       <h2 class="subtitle">
-        Nuxt.js project
+        manage players' tech-tree
       </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
+      <div class="buttons">
+        <b-button size="lg" variant="primary" v-b-modal.newGameModal>
+          ゲームを開始する
+        </b-button>
       </div>
     </div>
+
+    <new-game-modal id="newGameModal" @ok="handleOk"></new-game-modal>
   </section>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
-
-export default {
-  components: {
-    AppLogo
+  import NewGameModal from '~/components/NewGameModal.vue'
+  import { mapActions } from 'vuex'
+  import { START_GAME } from '~/store/action-types'
+  export default {
+    methods: {
+      async handleOk (colors) {
+        const gameId = await this.startGame(colors)
+        this.$router.push(`game/?${gameId}`)
+      },
+      ...mapActions({
+        startGame: START_GAME
+      })
+    },
+    components: {
+      NewGameModal
+    },
   }
-}
 </script>
 
 <style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+  .container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .title {
+    font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
+    display: block;
+    font-weight: 300;
+    font-size: 5rem;
+    color: #35495e;
+    letter-spacing: 1px;
+  }
+  .subtitle {
+    font-weight: 300;
+    font-size: 2rem;
+    color: #526488;
+    word-spacing: 5px;
+    padding-bottom: 15px;
+  }
+  .buttons {
+    padding-top: 15px;
+  }
 </style>
-
