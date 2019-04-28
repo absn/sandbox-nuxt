@@ -15,13 +15,13 @@
     "ss": "superstatic dist --port 3000"
   },
   "dependencies": {
+    "core-js": "~3.0.0",
     "bootstrap": "~4.0.0-beta.3",
     "bootstrap-vue": "~1.4.0",
     "firebase": "~4.8.1",
     "nuxt": "~2.0.0",
     "qrious": "~4.0.2",
-    "vuexfire": "~2.3.0",
-    "core-js": "~3.0.1"
+    "vuexfire": "~2.3.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
