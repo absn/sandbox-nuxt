@@ -1,6 +1,6 @@
 <template>
   <div class="players">
-    <div v-for-key="player in players" class="player-view" :class="player.color">
+    <div v-for="(player, i) in players" :key="i"  class="player-view" :class="player.color">
       <span class="player-badge" :class="player.color">{{player.color}}</span>
       <arms-info :player="player"/>
       <tech-tree :player="player"/>
