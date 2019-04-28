@@ -1,7 +1,7 @@
 import { firebaseMutations, firebaseAction } from 'vuexfire'
 import db from '~/plugins/firebase'
 import { SET_GAME_ID } from './mutation-types'
-import { LOAD_GAME, SET_PLAYERS_REF } from './action-types'
+import { LOAD_GAME, SET_PLAYERS_REF, ADD_TECH } from './action-types'
 
 const gamesRef = db.ref('games')
 
