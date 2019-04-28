@@ -21,7 +21,7 @@
     "nuxt": "~2.0.0",
     "qrious": "~4.0.2",
     "vuexfire": "~2.3.0",
-    "corejs": "~2.0.0"
+    "core-js": "~3.0.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
