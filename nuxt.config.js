@@ -33,7 +33,9 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
-  }
+    },
+    vendor: ['bootstrap-vue', 'firebase', 'vuexfire']
+  },
+  plugins: ['~plugins/bootstrap-vue', '~plugins/firebase']
 }
 
