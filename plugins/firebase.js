@@ -1,7 +1,8 @@
 import firebase from 'firebase'
 
 const config = {
-  databaseURL: 'https://civbg-support.firebaseio.com/'
+  //databaseURL: 'https://civbg-support.firebaseio.com/'
+  databaseURL: 'https://todos-9b28f.firebaseio.com/'
 }
 
 if (firebase.apps.length === 0) {

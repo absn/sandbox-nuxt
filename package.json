@@ -2,7 +2,7 @@
   "name": "sandbox-nuxt",
   "version": "1.0.0",
   "description": "Nuxt.js project",
-  "author": "sinjiabe@gmail.com",
+  "author": "leoleoleo@gmail.com",
   "private": true,
   "scripts": {
     "dev": "nuxt",
