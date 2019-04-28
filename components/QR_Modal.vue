@@ -1,5 +1,5 @@
 <template>
-  <b-modal id="qrModal" title="QR コード" :ok-only="true" ok-title="閉じる" :centered="true" @shown="generateQRCode">
+  <b-modal id="qrModal" title="QR コード Dayo" :ok-only="true" ok-title="閉じる" :centered="true" @shown="generateQRCode">
     <div class="d-block text-center">
       <canvas ref="qr"></canvas>
     </div>
