@@ -25,8 +25,11 @@
   export default {
     methods: {
       async handleOk (colors) {
-        const gameId = await this.startGame(colors)
-        this.$router.push(`game/?${gameId}`)
+        window.confirm('handleOk[1]:'+colors);
+        const gameId = await this.startGame(colors);
+        window.confirm('handleOk[2]'+gameId);
+        this.$router.push(`game/?${gameId}`);
+        window.confirm('handleOk[3]');
       },
       ...mapActions({
         startGame: START_GAME
